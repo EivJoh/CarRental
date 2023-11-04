@@ -1,1 +1,23 @@
-<!-- index -->
+<!-- Template fra forelesning -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data ['title'] }}</title>
+</head>
+<body>
+    <h1>
+        Enter username to retrieve information from database:
+    </h1>
+    <form method="post">
+        Username: <input name="username"/>
+        <br/><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Information from database</h1>
+        <h1>Username: {{ data['username'] }}</h1>
+        <h1>Email: {{ data['email'] }}</h1>
+</body>
+</html>
