@@ -1,3 +1,4 @@
+"""
 from neo4j import GraphDatabase, Driver, AsyncGraphDatabase, AsyncDriver
 import re
 
@@ -6,10 +7,68 @@ URI = "bolt://44.197.218.79:7687"
 AUTH = ("neo4j", "candidates-collector-filters")
 
 def _get_connection() -> Driver:
-    # driver = GraphDatabase.driver(URI, auth=AUTH)
     driver = GraphDatabase.driver(URI, auth=AUTH)
     driver.verify_connectivity()
     return driver
+"""
+from neo4j import GraphDatabase, Driver, AsyncGraphDatabase, AsyncDriver
+import re
+
+URI = "bolt://44.197.218.79:7687"
+AUTH = ("neo4j", "candidates-collector-filters")
+
+def _get_connection() -> Driver:
+    driver = GraphDatabase.driver(URI, auth=AUTH)
+    driver.verify_connectivity()
+    return driver
+
+def findCar(regnr):
+    data = _get_connection().execute_query('MATCH (a:car) WHERE a.regnr = $regnr RETURN a;', regnr=regnr)
+    return data
+
+def updateCar(regnr):
+    data = _get_connection().execute_query("MATCH (a:car) where a.name = $name RETURN a;", )
+    return data
+
+def addCar(model, make, regnr):
+    data = _get_connection().execute_query("CREATE (a:car {model: $model, make: $make, regnr: $regnr}) RETURN a;", model=model, make=make, regnr=regnr)
+    return data
+
+class Car:
+    def __init__(self, name, model, make, regnr):
+        self.name = name
+        self.model = model
+        self.make = make
+        self.regnr = regnr
+
+    def get_Name(self):
+        return self.name
+    
+    def set_Name(self, value):
+        self.name = value
+    
+    def get_Model(self):
+        return self.model
+    
+    def set_Model(self, value):
+        self.model = value
+
+    def get_Make(self):
+        return self.make
+    
+    def set_Make(self, value):
+        self.make = value
+
+    def get_Regnr(self):
+        return self.regnr
+    
+    def set_Regnr(self, value):
+        self.regnr = value
+
+
+addCar("Mercedes", "", "AB12345")
+x = findCar("AB12345")
+print(x)
 
 """
 from neo4j import GraphDatabase, basic_auth
