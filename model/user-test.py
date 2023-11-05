@@ -26,36 +26,36 @@ def addCar(model, make, regnr):
     return data
 
 class Car:
-    def __init__(self, name, model, make, regnr):
+    def __init__(self, name, make, model, regnr):
         self.name = name
-        self.model = model
         self.make = make
+        self.model = model
         self.regnr = regnr
-
+"""
     def get_Name(self):
         return self.name
     
     def set_Name(self, value):
         self.name = value
     
-    def get_Model(self):
-        return self.model
-    
-    def set_Model(self, value):
-        self.model = value
-
     def get_Make(self):
         return self.make
     
     def set_Make(self, value):
         self.make = value
 
+    def get_Model(self):
+        return self.model
+    
+    def set_Model(self, value):
+        self.model = value
+
     def get_Regnr(self):
         return self.regnr
     
     def set_Regnr(self, value):
         self.regnr = value
-
+"""
 #addCar("Mercedes", "3", "CF05101")
 #x = findCar("CF05101")
 #print(x)
