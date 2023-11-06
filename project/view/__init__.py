@@ -2,4 +2,4 @@ from flask import Flask
 
 app = Flask("project")
 
-from controller import *
+from project.controller import *
