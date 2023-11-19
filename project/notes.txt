@@ -1,0 +1,43 @@
+query used to update car in postman
+{
+    "Brand": "Toyota",
+    "Model": "Prius",
+    "Reg": "3",
+    "Year": "2012",
+    "Status": "avalible",
+    "Color": "green"
+}
+
+query used to update employee in postman
+{
+    "Email": "Gerd@hotmail.com",
+    "Branch": "Graphic Design",
+    "EmployeeID": "2",
+    "Employee_name": "Gerd"
+}
+
+update customer
+{
+    "Email": "Arne@hotmail.com",
+    "Adress": "69 LateNightStreet",
+    "CustomerID": "1",
+    "Customer_name": "Arne",
+    "Phone_Number": "87654321"
+}
+
+query used to create cars
+
+{
+    "Brand": "Tesla",
+    "Model": "S",
+    "Reg": "6",
+    "Year": "2012",
+    "Status": "avalible",
+    "Color": "gray"
+}
+
+query for delete cars
+
+{
+    "Reg": "3"
+}
